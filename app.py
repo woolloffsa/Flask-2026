@@ -21,6 +21,7 @@ def create_connection(db_file):
     print(e)
   return None
 
+
 @app.route('/')
 def render_home():
     return render_template("index.html")
