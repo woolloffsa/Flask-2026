@@ -1,10 +1,25 @@
 from flask import Flask, render_template
+import sqlite3
+from sqlite3 import Error
 
 app = Flask(
   __name__,
   template_folder='templates',
   static_folder='static'
 )
+DATABASE = "DigiCloset.db"
+
+def create_connection(db_file):
+  """Creates a connection to the database
+  :parameter db_file - name of the file
+  :returns connection - a connection to the database
+  """
+  try:
+    connection = sqlite3.connect(db_file)
+    return connection
+  except Error as e:
+    print(e)
+  return None
 
 @app.route('/')
 def render_home():
