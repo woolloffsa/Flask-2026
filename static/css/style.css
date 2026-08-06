@@ -27,3 +27,9 @@ article {
   background-color: lightpink;
   padding: 5px;
 }
+
+form {
+  border:1px solid;
+  padding: 5px;
+  margin: 5px;
+}
