@@ -27,5 +27,10 @@
         <input type="text" name="search" id="search">
         <input type="submit" value="Search">
     </form>
+    <main>
+        {% for item in clothes %}
+        <p>{{ item[1] }}</p>
+        {% endfor %}
+    </main>
 </body>
 </html>

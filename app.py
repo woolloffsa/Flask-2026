@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import sqlite3
 from sqlite3 import Error
 
@@ -43,6 +43,25 @@ def render_inventory():
 @app.route('/outfits')
 def render_outfits():
   return render_template("outfits.html")
+
+
+@app.route('/search', methods=['GET', 'POST'])
+def render_search():
+  """
+  Function to find all the records which contain the search item
+  :parameters
+  :POST contains the search value
+  :returns a rendered page
+  """
+  search = request.form['search']
+  query = "SELECT * from closet WHERE clothing_type = ?"
+  con = create_connection(DATABASE)
+  cur = con.cursor()
+  cur.execute(query, (search, ))
+  clothing_list = cur.fetchall()
+  print(clothing_list)
+  con.close()
+  return render_template("index.html", clothes=clothing_list)
 
 
 if __name__ == '__main__':
