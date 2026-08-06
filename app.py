@@ -29,7 +29,15 @@ def render_home():
 
 @app.route('/inventory')
 def render_inventory():
-  return render_template("inventory.html")
+  query = "SELECT clothing_type, colour FROM closet"
+  con = create_connection(DATABASE)
+  cur = con.cursor()
+
+  cur.execute(query)
+  clothing_list = cur.fetchall()
+  con.close()
+  print(clothing_list)
+  return render_template("inventory.html", clothes=clothing_list)
 
 
 @app.route('/outfits')
