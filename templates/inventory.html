@@ -24,8 +24,9 @@
         <h2>Inventory</h2>
             {% for item in clothes %}
             <article>
-              <h3>{{ item[0] }}</h3>
-              <p>{{ item[1] }}</p>
+                <h3>{{ item[0] }}</h3>
+                <p>{{ item[1] }}</p>
+                <img src="/static/images/{{ item[2] }}.jpg">
             </article>
             {% endfor %}
       </main>
