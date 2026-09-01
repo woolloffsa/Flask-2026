@@ -7,7 +7,7 @@ app = Flask(
   template_folder='templates',
   static_folder='static'
 )
-DATABASE = "DigiCloset.db"
+DATABASE = "CyberStyle.db"
 
 def create_connection(db_file):
   """Creates a connection to the database
