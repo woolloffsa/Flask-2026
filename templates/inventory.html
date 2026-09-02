@@ -4,28 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digicloset</title>
-    <link type="text/css" rel="stylesheet" href="/static/css/style.css"
+    <link type="text/css" rel="stylesheet" href="/static/css/inventory.css"
 </head>
 <body>
     <header>
         <h1>Inventory</h1>
     </header>
     <nav>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/outfits">Outfits</a>
-            </li>
-        </ul>
+        <a href="/">Home</a>
+        <a href="/outfits">Outfits</a>
     </nav>
     <main>
             {% for item in clothes %}
             <article>
                 <h2>{{ item[0] }}</h2>
                 <p>{{ item[1] }}</p>
-                <img src="/static/images/{{ item[2] }}.png" alt={{ item[2] }}>
+                <p>{{ item[2] }}</p>
+                <img src="/static/images/{{ item[3] }}.png" alt={{ item[3] }}>
             </article>
             {% endfor %}
       </main>
