@@ -54,10 +54,18 @@ def render_search():
   :returns a rendered page
   """
   search = request.form['search']
-  query = "SELECT * from closet WHERE clothing_type = ?"
+
+  query = """
+        SELECT * FROM closet 
+        WHERE clothing_id LIKE ?
+           OR clothing_type LIKE ?
+           OR colour LIKE ?
+           OR weather LIKE ?
+    """
+
   con = create_connection(DATABASE)
   cur = con.cursor()
-  cur.execute(query, (search, ))
+  cur.execute(query, (search, search, search, search))
   clothing_list = cur.fetchall()
   print(clothing_list)
   con.close()
