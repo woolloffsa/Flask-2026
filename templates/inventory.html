@@ -17,10 +17,10 @@
     <main>
             {% for item in clothes %}
             <article>
-                <h2>{{ item[0] }}</h2>
-                <p>{{ item[1] }}</p>
-                <p>{{ item[2] }}</p>
                 <img src="/static/images/{{ item[3] }}.png" alt={{ item[3] }}>
+                <p>Clothing type: {{ item[0] }}</p>
+                <p>Colour: {{ item[1] }}</p>
+                <p>Weather: {{ item[2] }}</p>
             </article>
             {% endfor %}
       </main>

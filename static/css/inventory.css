@@ -11,6 +11,10 @@ body {
   display: grid;
 }
 
+header {
+  text-align: center;
+}
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -27,8 +31,8 @@ nav a {
   padding: 0.5rem;
   text-align: center;
   text-decoration: none;
-  color: #9a775b;
-  border-right: 1px solid #9a775b;
+  color: black;
+  border-right: 1px solid black;
 }
 
 nav > a:last-of-type {
@@ -51,4 +55,8 @@ article {
 img {
   width: 200px;
   height: auto;
+}
+
+p {
+  text-align: center;
 }
