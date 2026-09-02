@@ -67,7 +67,6 @@ def render_search():
   cur = con.cursor()
   cur.execute(query, (search, search, search, search))
   clothing_list = cur.fetchall()
-  print(clothing_list)
   con.close()
   return render_template("index.html", clothes=clothing_list)
 
