@@ -15,14 +15,14 @@
         <a href="/outfits">Outfits</a>
     </nav>
     <main>
-            {% for item in clothes %}
-            <article>
-                <img src="/static/images/{{ item[3] }}.png" alt={{ item[3] }}>
-                <p>Clothing type: {{ item[0] }}</p>
-                <p>Colour: {{ item[1] }}</p>
-                <p>Weather: {{ item[2] }}</p>
-            </article>
-            {% endfor %}
-      </main>
+        {% for item in clothes %}
+        <article>
+            <img src="/static/images/{{ item[3] }}.png" alt={{ item[3] }}>
+            <p>Clothing type: {{ item[0] }}</p>
+            <p>Colour: {{ item[1] }}</p>
+            <p>Weather: {{ item[2] }}</p>
+        </article>
+        {% endfor %}
+    </main>
 </body>
 </html>

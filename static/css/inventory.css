@@ -50,6 +50,8 @@ article {
   background-color: lightpink;
   padding: 5px;
   max-width: 200px;
+  border-radius: 12px;
+  border: none;
 }
 
 img {
