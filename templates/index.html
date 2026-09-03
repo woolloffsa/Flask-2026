@@ -20,14 +20,14 @@
         <input type="submit" value="Search">
     </form>
     <main>
+        {% for item in clothes %}
         <article>
-            {% for item in clothes %}
             <img src="/static/images/{{ item[4] }}.png" alt={{ item[4] }}>
             <p>Clothing Type: {{ item[1] }}</p>
             <p>Colour: {{ item[2] }}</p>
             <p>Weather: {{ item[3] }}</p>
-            {% endfor %}
         </article>
+        {% endfor %}
     </main>
 </body>
 </html>

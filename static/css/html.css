@@ -19,6 +19,7 @@ form {
 
 main {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   row-gap: 20px;
   column-gap: 20px;
 }
@@ -32,4 +33,6 @@ article {
   background-color: lightpink;
   padding: 5px;
   max-width: 200px;
+  border-radius: 12px;
+  border: none;
 }
