@@ -7,6 +7,7 @@ app = Flask(
   template_folder='templates',
   static_folder='static'
 )
+
 DATABASE = "CyberStyle.db"
 
 def create_connection(db_file):
@@ -29,21 +30,26 @@ def render_home():
 
 @app.route('/inventory')
 def render_inventory():
-  query = "SELECT clothing_type, colour, weather, image FROM closet"
+  sort = request.args.get('sort', 'clothing_type')
+  order = request.args.get('order', 'asc')
+  if order == 'asc':
+    new_order = 'desc'
+  else:
+    new_order = 'asc'
+
   con = create_connection(DATABASE)
   cur = con.cursor()
-
+  query = "SELECT clothing_type, colour, weather, image FROM closet ORDER BY " + sort + " " + order
   cur.execute(query)
   clothing_list = cur.fetchall()
   con.close()
-  print(clothing_list)
-  return render_template("inventory.html", clothes=clothing_list)
+  return render_template("inventory.html", clothes=clothing_list, order=new_order)
 
 
 @app.route('/outfits')
 def render_outfits():
   return render_template("outfits.html")
-
+  
 
 @app.route('/search', methods=['GET', 'POST'])
 def render_search():
