@@ -30,8 +30,12 @@ def render_home():
 
 @app.route('/inventory')
 def render_inventory():
-  sort = request.args.get('sort', 'clothing_type')
+  # Get the sort request, default to 'clothing_id' if not provided
+  sort = request.args.get('sort', 'clothing_id')
+  # Get the current sort order, default to 'asc' if not provided
   order = request.args.get('order', 'asc')
+
+  # Toggle the sort order
   if order == 'asc':
     new_order = 'desc'
   else:
@@ -39,7 +43,9 @@ def render_inventory():
 
   con = create_connection(DATABASE)
   cur = con.cursor()
+  # Sort query
   query = "SELECT clothing_type, colour, weather, image FROM closet ORDER BY " + sort + " " + order
+  # Query the db for the sorted fields
   cur.execute(query)
   clothing_list = cur.fetchall()
   con.close()
@@ -61,6 +67,7 @@ def render_search():
   """
   search = request.form['search']
 
+  # Search query
   query = """
         SELECT * FROM closet 
         WHERE clothing_id LIKE ?
@@ -71,6 +78,7 @@ def render_search():
 
   con = create_connection(DATABASE)
   cur = con.cursor()
+  # Query the db for any matches of search
   cur.execute(query, (search, search, search, search))
   clothing_list = cur.fetchall()
   con.close()
