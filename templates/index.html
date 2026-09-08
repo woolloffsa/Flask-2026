@@ -22,10 +22,10 @@
     <main>
         {% for item in clothes %}
         <article>
-            <img src="/static/images/{{ item[4] }}.png" alt={{ item[4] }}>
-            <p>Clothing Type: {{ item[1] }}</p>
-            <p>Colour: {{ item[2] }}</p>
-            <p>Weather: {{ item[3] }}</p>
+            <img src="/static/images/{{ item[5] }}.png" alt={{ item[5] }}>
+            <p>Clothing Type: {{ item[2] }}</p>
+            <p>Colour: {{ item[3] }}</p>
+            <p>Weather: {{ item[4] }}</p>
         </article>
         {% endfor %}
     </main>
