@@ -56,13 +56,18 @@ def render_inventory():
 def render_outfits():
   con = create_connection(DATABASE)
   cur = con.cursor()
-  # Sort query
-  query = "SELECT category, image FROM closet"
-  # Query the db for the sorted fields
+  # Query to select all tops and their photos
+  query = "SELECT category, image FROM closet WHERE category = 'top'"
+  # Query the db for tops
   cur.execute(query)
-  clothing_list = cur.fetchall()
+  tops_list = cur.fetchall()
+  # Query to select all bottoms and their photos
+  query = "SELECT category, image FROM closet WHERE category = 'bottom'"
+  # Query the db for bottoms
+  cur.execute(query)
+  bottoms_list = cur.fetchall()
   con.close()
-  return render_template("outfits.html", clothes=clothing_list)
+  return render_template("outfits.html", tops=tops_list, bottoms=bottoms_list)
   
 
 @app.route('/search', methods=['GET', 'POST'])
