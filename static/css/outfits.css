@@ -6,6 +6,8 @@
 
 .container {
     padding: 2rem;
+    width: 400px;
+    height: auto;
 }
 
 .slider-wrapper {

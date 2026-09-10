@@ -23,6 +23,12 @@ def create_connection(db_file):
   return None
 
 
+def create_cursor():
+  con = create_connection(DATABASE)
+  cur = con.cursor()
+  return(con, cur)
+
+
 @app.route('/')
 def render_home():
     return render_template("index.html")
@@ -41,10 +47,9 @@ def render_inventory():
   else:
     new_order = 'asc'
 
-  con = create_connection(DATABASE)
-  cur = con.cursor()
+  create_cursor()
   # Sort query
-  query = "SELECT clothing_type, colour, weather, image FROM closet ORDER BY " + sort + " " + order
+  query = "SELECT clothing_type, clothing_colour, seasonal_type, image FROM closet ORDER BY " + sort + " " + order
   # Query the db for the sorted fields
   cur.execute(query)
   clothing_list = cur.fetchall()
@@ -85,8 +90,8 @@ def render_search():
         SELECT * FROM closet 
         WHERE clothing_id LIKE ?
            OR clothing_type LIKE ?
-           OR colour LIKE ?
-           OR weather LIKE ?
+           OR clothing_colour LIKE ?
+           OR seasonal_type LIKE ?
     """
 
   con = create_connection(DATABASE)
