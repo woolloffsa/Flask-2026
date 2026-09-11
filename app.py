@@ -23,12 +23,6 @@ def create_connection(db_file):
   return None
 
 
-def create_cursor():
-  con = create_connection(DATABASE)
-  cur = con.cursor()
-  return(con, cur)
-
-
 @app.route('/')
 def render_home():
     return render_template("index.html")
@@ -47,7 +41,8 @@ def render_inventory():
   else:
     new_order = 'asc'
 
-  create_cursor()
+  con = create_connection(DATABASE)
+  cur = con.cursor()
   # Sort query
   query = "SELECT clothing_type, clothing_colour, seasonal_type, image FROM closet ORDER BY " + sort + " " + order
   # Query the db for the sorted fields
