@@ -13,9 +13,13 @@
     <nav>
         <a href="/">Home</a>
         <a href="/outfits">Outfits</a>
-        <a href="/inventory?sort=clothing_colour&order={{ order }}">Colour</a>
-        <a href="/inventory?sort=clothing_type&order={{ order }}">Clothing Type</a>
-        <a href="/inventory?sort=seasonal_type&order={{ order }}">Weather</a>
+        <div class="dropdown">Sort By
+            <div class="dropdown-content">
+                <a href="/inventory?sort=clothing_colour&order={{ order }}">Colour</a>
+                <a href="/inventory?sort=clothing_type&order={{ order }}">Type</a>
+                <a href="/inventory?sort=seasonal_type&order={{ order }}">Season</a>
+            </div>
+        </div>
     </nav>
     <main>
         {% for item in clothes %}
