@@ -13,35 +13,60 @@
         <a href="/">Home</a>
         <a href="/inventory">Inventory</a>
     </nav>
-    <main>
-        <section class="container">
-            <div class="slide-wrapper">
-                <div class="slider">
-                    {% for top in tops %}
-                        <img id="top-slide-{{ loop.index }}" src="/static/images/{{ top[1] }}.png" alt={{ top[1] }}>
-                    {% endfor %}
-                </div>
-                <div class="slider-nav">
-                    {% for top in tops %}
-                        <a href="#top-slide-{{ loop.index }}"></a>
-                    {% endfor %}
+    <main class="ds-container">
+        <div class="ds-half">
+            <div class="speaker-grille">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+            </div>
+            <div class="screen-frame">
+                <section class="screen">
+                    <div class="slide-wrapper">
+                        <div class="slider">
+                            {% for top in tops %}
+                                <img id="top-slide-{{ loop.index }}" src="/static/images/{{ top[1] }}.png" alt={{ top[1] }}>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="speaker-grille">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="hinge">
+        </div>
+        <div class="ds-half">
+            <div class="controls">
+                <div class="d-pad">
+                    <div class="d-pad-horizontal"></div>
+                    <div class="d-pad-vertical"></div>
                 </div>
             </div>
-        </section>
-        <section class="container">
-            <div class="slide-wrapper">
-                <div class="slider">
-                    {% for bottom in bottoms %}
-                        <img id="top-slide-{{ loop.index }}" src="/static/images/{{ bottom[1] }}.png" alt={{ bottom[1] }}>
-                    {% endfor %}
+            <div class="screen-frame">
+                <section class="screen">
+                    <div class="slide-wrapper">
+                        <div class="slider">
+                            {% for bottom in bottoms %}
+                                <img id="top-slide-{{ loop.index }}" src="/static/images/{{ bottom[1] }}.png" alt={{ bottom[1] }}>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="controls">
+                <div class="abxy-buttons">
+                    <span class="btn btn-top"></span>
+                    <span class="btn btn-left"></span>
+                    <span class="btn btn-right"></span>
+                    <span class="btn btn-bottom"></span>
                 </div>
-                <div class="slider-nav">
-                    {% for bottom in bottoms %}
-                        <a href="#top-slide-{{ loop.index }}"></a>
-                    {% endfor %}
+                <div class="option-buttons">
+                    <span></span><span></span>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 </body>
 </html>
