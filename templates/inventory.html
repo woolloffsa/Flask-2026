@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digicloset</title>
-    <link type="text/css" rel="stylesheet" href="/static/css/inventory.css"
-</head>
+    <link type="text/css" rel="stylesheet" href="/static/css/inventory.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap" rel="stylesheet">
 <body>
     <header>
         <h1>Inventory</h1>
@@ -22,6 +24,10 @@
         </div>
     </nav>
     <main>
+        <form method="POST" action="/search">
+            <input type="text" name="search" id="search">
+            <input type="submit" value="Search">
+        </form>
         {% for item in clothes %}
         <article>
             <div class="image">
@@ -33,5 +39,8 @@
         </article>
         {% endfor %}
     </main>
+    <footer>
+        <p>Sabine Woolloff</p>
+    </footer>
 </body>
 </html>

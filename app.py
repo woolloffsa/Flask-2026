@@ -82,7 +82,7 @@ def render_search():
 
   # Search query
   query = """
-        SELECT * FROM closet 
+        SELECT clothing_type, clothing_colour, seasonal_type, image FROM closet 
         WHERE clothing_id LIKE ?
            OR clothing_type LIKE ?
            OR clothing_colour LIKE ?
@@ -95,7 +95,7 @@ def render_search():
   cur.execute(query, (search, search, search, search))
   clothing_list = cur.fetchall()
   con.close()
-  return render_template("index.html", clothes=clothing_list)
+  return render_template("inventory.html", clothes=clothing_list)
 
 
 if __name__ == '__main__':
