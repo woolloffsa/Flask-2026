@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digicloset</title>
-    <link type="text/css" rel="stylesheet" href="/static/css/html.css"
+    <link type="text/css" rel="stylesheet" href="/static/css/html.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,14 +18,18 @@
         <a href="/outfits">Outfits</a>
     </nav>
     <main>
-        {% for item in clothes %}
-        <article>
-            <img src="/static/images/{{ item[5] }}.png" alt={{ item[5] }}>
-            <p>Clothing Type: {{ item[2] }}</p>
-            <p>Colour: {{ item[3] }}</p>
-            <p>Season: {{ item[4] }} weather</p>
-        </article>
-        {% endfor %}
+        <h2>Welcome to CyberStyle!</h2>
+        <p>
+            CyberStyle is a digital wardrobe & styling website. 
+            Deciding on outfits can be an annoying and time consuming task. 
+            Many clothing items get left unworn simply because they are forgotten about. 
+            Creating fun and unique outfits can be a laborise task changing between many items, 
+            creating a mess of your space as you trial options only to end up in your comfort sweats and tank. 
+            CyberStyle is a digital closet designed to keep track of items and build outfits efficiently.
+        </p>
     </main>
+    <footer>
+        <p>Sabine Woolloff</p>
+    </footer>
 </body>
 </html>

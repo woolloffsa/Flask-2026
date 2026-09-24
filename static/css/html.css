@@ -4,41 +4,50 @@
   box-sizing: border-box;
 }
 
-
 body {
   background-color:lightblue;
   color:black;
   margin: 10px;
 }
 
+header {
+  text-align: center;
+  background-color:#FFC3D8;
+  padding: 5px;
+  width: 100%;
+  font-family: "Emilys Candy", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  font-style: normal;
+  color:#51382B;
+}
+
 main {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  row-gap: 20px;
-  column-gap: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-img {
+nav {
   display: flex;
-  align-items: center;
+  padding: 0.25rem;
+  gap: 8rem;
   justify-content: center;
-  background-color: #f9f9f9;
-  border: 2px solid #51382B;
-  border-radius: 5px;
-  border-bottom-left-radius: 15px;
-  width: 180px;
-  height: auto;
-  corner-bottom-left-shape: bevel;
 }
 
-article {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+nav a {
+  display: inline-block;
   background-color: #FFC3D8;
-  padding: 10px;
-  max-width: 200px;
-  border: 2px solid #51382B;
-  border-radius: 5px;
-  border-bottom-left-radius: 30px;
+  border-radius: 15px;
+  min-width: 9rem;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  color:#51382B;
+}
+
+footer {
+  background-color:#FFC3D8;
+  margin-top: 5px;
+  padding: 5px;
+  width: 100%;
 }
