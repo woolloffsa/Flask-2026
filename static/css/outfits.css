@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: radial-gradient(#d1fffc 20%, transparent 20%),
+    radial-gradient(#58e8de 20%, transparent 20%);
+  background-color: #fafafa;
+  background-position: 0 0, 50px 50px;
+  background-size: 100px 100px;
+}
+
 header {
   text-align: center;
   background-color:#FFC3D8;
@@ -28,13 +39,6 @@ nav a {
   font-size: 15px;
   color:#51382B;
   text-decoration: none;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color:lightblue;
 }
 
 .ds-container {
