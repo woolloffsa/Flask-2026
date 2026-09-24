@@ -25,7 +25,19 @@ def create_connection(db_file):
 
 @app.route('/')
 def render_home():
-    return render_template("index.html")
+    con = create_connection(DATABASE)
+    cur = con.cursor()
+    # Sort query
+    query = "SELECT * FROM closet WHERE category = 'top' ORDER BY RANDOM() LIMIT 1"
+    # Query the db for the sorted fields
+    cur.execute(query)
+    top_selection = cur.fetchall()   
+    query = "SELECT * FROM closet WHERE category = 'bottom' ORDER BY RANDOM() LIMIT 1"
+    # Query the db for the sorted fields
+    cur.execute(query)
+    bottom_selection = cur.fetchall()   
+    con.close()
+    return render_template("index.html", top=top_selection, bottom=bottom_selection)
 
 
 @app.route('/inventory')
