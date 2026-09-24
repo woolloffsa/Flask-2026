@@ -7,7 +7,6 @@
 body {
   background-color:lightblue;
   color:black;
-  margin: 10px;
 }
 
 header {
@@ -28,7 +27,8 @@ header a {
 
 main {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
 }
 
 nav {
@@ -47,6 +47,20 @@ nav a {
   text-align: center;
   text-decoration: none;
   color:#51382B;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 220px;
+  height: auto;
+  margin: 5px 30px;
+  padding: 5px;
+  background-color: #FFC3D8;
+  border-radius: 15px;
 }
 
 footer {
