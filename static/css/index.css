@@ -47,6 +47,7 @@ nav {
 nav a {
   display: inline-block;
   background-color: #FFC3D8;
+  border: 1.25px solid #51382B;
   border-radius: 40px;
   min-width: 6.5rem;
   padding: 0.5rem;
