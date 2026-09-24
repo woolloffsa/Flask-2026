@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap" rel="stylesheet">
 <body>
     <header>
-        <h1>Inventory</h1>
+        <a href="/inventory">Inventory</a>
     </header>
     <nav>
         <a href="/">Home</a>
@@ -28,16 +28,18 @@
             <input type="text" name="search" id="search">
             <input type="submit" value="Search">
         </form>
-        {% for item in clothes %}
-        <article>
-            <div class="image">
-                <img src="/static/images/{{ item[3] }}.png" alt={{ item[3] }}>
-            </div>
-            <p>Clothing type: {{ item[0] }}</p>
-            <p>Colour: {{ item[1] }}</p>
-            <p>Season: {{ item[2] }} weather</p>
-        </article>
-        {% endfor %}
+        <div class="clothing-items">
+            {% for item in clothes %}
+            <article>
+                <div class="image">
+                    <img src="/static/images/{{ item[3] }}.png" alt={{ item[3] }}>
+                </div>
+                <p>Clothing type: {{ item[0] }}</p>
+                <p>Colour: {{ item[1] }}</p>
+                <p>Season: {{ item[2] }} weather</p>
+            </article>
+            {% endfor %}
+        </div>
     </main>
     <footer>
         <p>Sabine Woolloff</p>
