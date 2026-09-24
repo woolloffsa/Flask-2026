@@ -18,6 +18,7 @@ body {
 header {
   text-align: center;
   background-color:#FFC3D8;
+  border-bottom: 1.25px solid #51382B;
   padding: 5px;
   width: 100%;
 }
@@ -33,12 +34,18 @@ header a {
 
 nav {
   padding: 0.25rem;
+  font-size: 17px;
 }
 
 nav a {
-  font-size: 15px;
-  color:#51382B;
+  display: inline-block;
+  background-color: #FFC3D8;
+  border-radius: 40px;
+  min-width: 6.5rem;
+  padding: 0.5rem;
+  text-align: center;
   text-decoration: none;
+  color:#51382B;
 }
 
 .ds-container {
@@ -93,7 +100,7 @@ nav a {
   height: 100%;
   padding: 5px;
   border: 2px solid #FF91B8;
-  background-color: #51382B;
+  background-color: #f9f9f9;
 }
 
 .hinge {
@@ -198,6 +205,8 @@ nav a {
 
 footer {
   background-color:#FFC3D8;
+  border-top: 1.25px solid #51382B;
+  font-size: 11px;
   margin-top: 5px;
   padding: 5px;
   width: 100%;

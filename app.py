@@ -43,7 +43,7 @@ def render_home():
 @app.route('/inventory')
 def render_inventory():
   # Get the sort request, default to 'clothing_id' if not provided
-  sort = request.args.get('sort', 'clothing_id')
+  sort = request.args.get('sort', 'clothing_colour')
   # Get the current sort order, default to 'asc' if not provided
   order = request.args.get('order', 'asc')
 
