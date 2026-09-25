@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'rascal';
+    src: url('fonts/rascal.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -33,12 +40,13 @@ header a {
 main {
   display: flex;
   gap: 20px;
-  margin: 10px;
+  margin: 5px 15px;
 }
 
 nav {
   display: flex;
   padding: 0.25rem;
+  margin: 5px 0;
   gap: 0.25rem;
   font-size: 17px;
   justify-content: center;
@@ -62,7 +70,7 @@ nav a {
   flex: 1;
 }
 
-p {
+.text p {
   margin-top: 5px;
 }
 
@@ -70,20 +78,30 @@ p {
   display: flex;
   flex-direction: column;
   flex: 1;
+  background-color: #FFC3D8;
+  border: 1.5px solid #FF91B8;
+  border-radius: 20px;
   margin-bottom: 15px;
+  padding: 10px;
 }
 
 img {
-  width: 220px;
+  width: 240px;
   height: auto;
   margin: 5px 30px;
-  padding: 5px;
-  background-color: #FFC3D8;
+  padding: 10px;
+  background-color: #d1fffc;
+  border: 1.5px solid #FF91B8;
   border-radius: 15px;
 }
 
 .outfit article {
   align-self: center;
+}
+
+.outfit p {
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 footer {
