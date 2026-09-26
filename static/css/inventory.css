@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Angelic Peace';
+    src: url('/static/fonts/Angelic Peace.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -25,10 +32,11 @@ header {
 }
 
 header a {
-  font-family: "Emilys Candy", sans-serif;
+  font-family: "Angelic Peace", sans-serif;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 40px;
   font-style: normal;
+  letter-spacing: 2px;
   text-decoration: none;
   color:#51382B;
 }
