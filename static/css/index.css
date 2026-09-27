@@ -23,7 +23,7 @@ body {
 header {
   text-align: center;
   background-color:#FFC3D8;
-  border-bottom: 1.25px solid #51382B;
+  border-bottom: 1.75px solid #51382B;
   padding: 5px;
   width: 100%;
 }
@@ -42,6 +42,9 @@ main {
   display: flex;
   gap: 20px;
   margin: 5px 15px;
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 nav {
@@ -56,13 +59,16 @@ nav {
 nav a {
   display: inline-block;
   background-color: #FFC3D8;
-  border: 1.25px solid #51382B;
+  border: 1.75px solid #51382B;
   border-radius: 40px;
   min-width: 6.5rem;
   padding: 0.5rem;
   text-align: center;
   text-decoration: none;
   color:#51382B;
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .text {
@@ -107,7 +113,7 @@ img {
 
 footer {
   background-color:#FFC3D8;
-  border-top: 1.25px solid #51382B;
+  border-top: 1.75px solid #51382B;
   font-size: 11px;
   padding: 5px;
 }

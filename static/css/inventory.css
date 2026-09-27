@@ -26,7 +26,7 @@ main {
 header {
   text-align: center;
   background-color:#FFC3D8;
-  border-bottom: 1.25px solid #51382B;
+  border-bottom: 1.75px solid #51382B;
   padding: 5px;
   width: 100%;
 }
@@ -55,13 +55,16 @@ nav {
 nav a {
   display: inline-block;
   background-color: #FFC3D8;
-  border: 1.25px solid #51382B;
+  border: 1.75px solid #51382B;
   border-radius: 40px;
   min-width: 6.5rem;
   padding: 0.5rem;
   text-align: center;
   text-decoration: none;
   color:#51382B;
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .dropdown {
@@ -72,8 +75,11 @@ nav a {
   margin-right: 10px;
   text-align: center;
   background-color: #FFC3D8;
-  border: 1.25px solid #51382B;
+  border: 1.75px solid #51382B;
   border-radius: 30px;
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .dropdown-content {
@@ -102,7 +108,7 @@ nav a {
 }
 
 form {
-  border: 1.5px solid #51382B;
+  border: 1.75px solid #51382B;
   border-radius: 5px;
   padding: 5px;
   margin-bottom: 10px;
@@ -117,8 +123,6 @@ form {
 }
 
 article {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   background-color: #FFC3D8;
   padding: 10px;
@@ -135,6 +139,9 @@ img {
 
 p {
   text-align: center;
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .image {
@@ -153,7 +160,7 @@ p {
 footer {
   display: flex;
   background-color:#FFC3D8;
-  border-top: 1.25px solid #51382B;
+  border-top: 1.75px solid #51382B;
   font-size: 11px;
   padding: 5px;
 }
