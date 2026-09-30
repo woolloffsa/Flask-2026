@@ -12,6 +12,8 @@
 }
 
 body {
+  /* Creates a polkadot pattern */
+  /* Code learnt from https://dev.to/clairecodes/how-to-create-a-polka-dot-background-with-css-23m0 */
   background-image: radial-gradient(#d1fffc 20%, transparent 20%),
     radial-gradient(#58e8de 20%, transparent 20%);
   background-color: #fafafa;

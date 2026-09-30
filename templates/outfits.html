@@ -26,6 +26,8 @@
                 <section class="screen">
                     <div class="slider">
                         {% for top in tops %}
+                            <!-- Creates an image slider -->
+                            <!-- Code learnt from https://www.youtube.com/watch?v=McPdzhLRzCg -->
                             <img id="top-slide-{{ loop.index }}" src="/static/images/{{ top[1] }}.png" alt={{ top[1] }}>
                         {% endfor %}
                     </div>
@@ -49,6 +51,8 @@
                 <section class="screen">
                     <div class="slider">
                         {% for bottom in bottoms %}
+                            <!-- Creates an image slider -->
+                            <!-- Code learnt from https://www.youtube.com/watch?v=McPdzhLRzCg -->
                             <img id="top-slide-{{ loop.index }}" src="/static/images/{{ bottom[1] }}.png" alt={{ bottom[1] }}>
                         {% endfor %}
                     </div>
@@ -68,7 +72,7 @@
         </div>
     </main>
     <footer>
-        <p>Sabine Woolloff</p>
+        <p>Sabine Woolloff 2026</p>
     </footer>
 </body>
 </html>

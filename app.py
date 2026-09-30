@@ -27,15 +27,17 @@ def create_connection(db_file):
 def render_home():
     con = create_connection(DATABASE)
     cur = con.cursor()
-    # Sort query
-    query = "SELECT * FROM closet WHERE category = 'top' ORDER BY RANDOM() LIMIT 1"
-    # Query the db for the sorted fields
+    # Randomized top query
+    # Code learnt from https://www.youtube.com/watch?v=3AlUIKNE-_s
+    query = "SELECT image FROM closet WHERE category = 'top' ORDER BY RANDOM() LIMIT 1"
+    # Query the db for random top image
     cur.execute(query)
-    top_selection = cur.fetchall()   
-    query = "SELECT * FROM closet WHERE category = 'bottom' ORDER BY RANDOM() LIMIT 1"
-    # Query the db for the sorted fields
+    top_selection = cur.fetchall()
+    # Randomized bottom query
+    query = "SELECT image FROM closet WHERE category = 'bottom' ORDER BY RANDOM() LIMIT 1"
+    # Query the db for random bottom image
     cur.execute(query)
-    bottom_selection = cur.fetchall()   
+    bottom_selection = cur.fetchall()
     con.close()
     return render_template("index.html", top=top_selection, bottom=bottom_selection)
 
