@@ -33,10 +33,10 @@
             <p>Reload to shuffle!</p>
             <div class="outfit-display">
                 {% for item in top %}
-                    <img src="/static/images/{{ item[0] }}.png" alt={{ item[0] }}>
+                    <img src="{{ url_for('static', filename='images/' ~ item[0] ~ '.png') }}" alt="{{ item[0] }}">
                 {% endfor %}
                 {% for item in bottom %}
-                    <img src="/static/images/{{ item[0] }}.png" alt={{ item[0] }}>
+                    <img src="{{ url_for('static', filename='images/' ~ item[0] ~ '.png') }}" alt="{{ item[0] }}">
                 {% endfor %}
             </div>
         </div>
