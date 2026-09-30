@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfits</title>
     <link type="text/css" rel="stylesheet" href="/static/css/outfits.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,30 +17,33 @@
         <a href="/">Home</a>
         <a href="/inventory">Inventory</a>
     </nav>
+    <!-- Nintendo 3DS -->
     <main class="ds-container">
+        <!-- Top screen -->
         <div class="ds-half">
             <div class="speaker">
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
             </div>
             <div class="screen-frame">
-                <section class="screen">
+                <div class="screen">
                     <div class="slider">
                         {% for top in tops %}
                             <!-- Creates an image slider -->
                             <!-- Code learnt from https://www.youtube.com/watch?v=McPdzhLRzCg -->
-                            <img id="top-slide-{{ loop.index }}" src="/static/images/{{ top[1] }}.png" alt={{ top[1] }}>
+                            <img id="top-slide-{{loop.index}}" src="{{ url_for('static', filename='images/' ~ top[1] ~ '.png') }}" alt="{{ top[1] }}">
                         {% endfor %}
                     </div>
-                </section>
+                </div>
             </div>
             <div class="speaker">
                 <span></span><span></span><span></span>
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="hinge">
-        </div>
+        <!-- Hinge -->
+        <div class="hinge"></div>
+        <!-- Bottom screen -->
         <div class="ds-half">
             <div class="controls">
                 <div class="d-pad">
@@ -48,15 +52,15 @@
                 </div>
             </div>
             <div class="screen-frame">
-                <section class="screen">
+                <div class="screen">
                     <div class="slider">
                         {% for bottom in bottoms %}
                             <!-- Creates an image slider -->
                             <!-- Code learnt from https://www.youtube.com/watch?v=McPdzhLRzCg -->
-                            <img id="top-slide-{{ loop.index }}" src="/static/images/{{ bottom[1] }}.png" alt={{ bottom[1] }}>
+                            <img id="bottom-slide-{{loop.index}}" src="{{ url_for('static', filename='images/' ~ bottom[1] ~ '.png') }}" alt="{{ bottom[1] }}">
                         {% endfor %}
                     </div>
-                </section>
+                </div>
             </div>
             <div class="controls">
                 <div class="abxy-buttons">
