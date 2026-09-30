@@ -97,15 +97,18 @@ nav a {
 img {
   width: 240px;
   height: auto;
-  margin: 5px 30px;
+  margin: 5px auto;
   padding: 10px;
   background-color: #d1fffc;
   border: 1.5px solid #FF91B8;
   border-radius: 15px;
 }
 
-.outfit article {
-  align-self: center;
+.outfit-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .outfit p {

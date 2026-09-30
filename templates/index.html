@@ -31,16 +31,14 @@
         <div class="outfit">
             <h2>Suggested Outfit:</h2>
             <p>Reload to shuffle!</p>
-            {% for item in top %}
-            <article>
-                <img src="/static/images/{{ item[0] }}.png" alt={{ item[0] }}>
-            </article>
-            {% endfor %}
-            {% for item in bottom %}
-            <article>
-                <img src="/static/images/{{ item[0] }}.png" alt={{ item[0] }}>
-            </article>
-            {% endfor %}
+            <div class="outfit-display">
+                {% for item in top %}
+                    <img src="/static/images/{{ item[0] }}.png" alt={{ item[0] }}>
+                {% endfor %}
+                {% for item in bottom %}
+                    <img src="/static/images/{{ item[0] }}.png" alt={{ item[0] }}>
+                {% endfor %}
+            </div>
         </div>
     </main>
     <footer>
