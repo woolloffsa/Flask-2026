@@ -124,7 +124,8 @@ form {
   justify-items: center
 }
 
-article {
+.item-card {
+  display: grid;
   justify-content: center;
   background-color: #FFC3D8;
   padding: 10px;

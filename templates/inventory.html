@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+</head>
     <header>
         <a href="/inventory">InVentorY</a>
     </header>
@@ -16,9 +17,9 @@
         <a href="/outfits">Outfits</a>
         <div class="dropdown">Sort By
             <div class="dropdown-content">
-                <a href="/inventory?sort=clothing_colour&order={{ order }}">Colour</a>
-                <a href="/inventory?sort=clothing_type&order={{ order }}">Type</a>
-                <a href="/inventory?sort=seasonal_type&order={{ order }}">Season</a>
+                <a href="{{ url_for('render_inventory', sort='clothing_colour', order=order) }}">Colour</a>
+                <a href="{{ url_for('render_inventory', sort='clothing_type', order=order) }}">Type</a>
+                <a href="{{ url_for('render_inventory', sort='seasonal_type', order=order) }}">Season</a>
             </div>
         </div>
     </nav>
@@ -29,14 +30,14 @@
         </form>
         <div class="clothing-items">
             {% for item in clothes %}
-            <article>
+            <div class="item-card">
                 <div class="image">
-                    <img src="/static/images/{{ item[3] }}.png" alt={{ item[3] }}>
+                    <img src="{{ url_for('static', filename='images/' ~ item[3] ~ '.png') }}" alt="{{ item[3] }}">
                 </div>
                 <p>Clothing type: {{ item[0] }}</p>
                 <p>Colour: {{ item[1] }}</p>
                 <p>Season: {{ item[2] }} weather</p>
-            </article>
+            </div>
             {% endfor %}
         </div>
     </main>
