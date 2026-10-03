@@ -13,6 +13,12 @@
         <a href="/inventory">InVentorY</a>
     </header>
     <nav>
+        <form method="POST" action="/search">
+            <div class="search-input-wrapper">
+                <input type="text" name="search" id="search">
+            </div>
+            <input type="submit" value="Search">
+        </form>
         <a href="/">Home</a>
         <a href="/outfits">Outfits</a>
         <div class="dropdown">Sort By
@@ -24,10 +30,6 @@
         </div>
     </nav>
     <main>
-        <form method="POST" action="/search">
-            <input type="text" name="search" id="search">
-            <input type="submit" value="Search">
-        </form>
         <div class="clothing-items">
             {% for item in clothes %}
             <div class="item-card">
