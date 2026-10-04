@@ -111,6 +111,10 @@ nav a:hover {
   border-bottom: none;
 }
 
+.dropdown-content a:hover {
+  background-color: transparent;
+}
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
