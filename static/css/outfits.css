@@ -14,17 +14,17 @@
 body {
   /* Creates a polkadot pattern */
   /* Code learnt from https://dev.to/clairecodes/how-to-create-a-polka-dot-background-with-css-23m0 */
-  background-image: radial-gradient(#d1fffc 20%, transparent 20%),
-    radial-gradient(#58e8de 20%, transparent 20%);
-  background-color: #fafafa;
+  background-image: radial-gradient(#ffa9c5 20%, transparent 20%),
+    radial-gradient(#906144 20%, transparent 20%);
+  background-color: #fff8f0;
   background-position: 0 0, 50px 50px;
   background-size: 100px 100px;
 }
 
 header {
   text-align: center;
-  background-color:#FFC3D8;
-  border-bottom: 1.75px solid #51382B;
+  background-color:#f8b0c8;
+  border-bottom: 1.75px solid #906144;
   padding: 5px;
   width: 100%;
 }
@@ -36,7 +36,7 @@ header a {
   font-style: normal;
   letter-spacing: 2px;
   text-decoration: none;
-  color:#51382B;
+  color:#614533;
 }
 
 nav {
@@ -50,21 +50,21 @@ nav {
 
 nav a {
   display: inline-block;
-  background-color: #FFC3D8;
-  border: 1.75px solid #51382B;
+  background-color: #f8b0c8;
+  border: 1.75px solid #895737;
   border-radius: 40px;
   min-width: 6.5rem;
   padding: 0.5rem;
   text-align: center;
   text-decoration: none;
-  color:#51382B;
+  color:#906144;
   font-family: "Crimson Text", serif;
   font-weight: 400;
   font-style: normal;
 }
 
 nav a:hover {
-  background-color: #FF91B8;
+  background-color: #ffa9c5;
 }
 
 .ds-container {
@@ -120,7 +120,7 @@ nav a:hover {
   height: 100%;
   padding: 5px;
   border: 2px solid #FF91B8;
-  background-color: #f9f9f9;
+  background-color: #fff8f0;
 }
 
 .hinge {
@@ -225,8 +225,9 @@ nav a:hover {
 }
 
 footer {
-  background-color:#FFC3D8;
-  border-top: 1.75px solid #51382B;
+  background-color:#f8b0c8;
+  border-top: 1.75px solid #906144;
+  color: #906144;
   font-size: 11px;
   margin-top: 5px;
   padding: 5px;

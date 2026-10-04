@@ -1,3 +1,5 @@
+"""Digital Wardrobe & Styling App."""
+
 from flask import Flask, render_template, request
 import sqlite3
 from sqlite3 import Error
@@ -10,8 +12,10 @@ app = Flask(
 
 DATABASE = "CyberStyle.db"
 
+
 def create_connection(db_file):
-  """Creates a connection to the database
+  """Create a connection to the database.
+
   :parameter db_file - name of the file
   :returns connection - a connection to the database
   """
@@ -25,25 +29,32 @@ def create_connection(db_file):
 
 @app.route('/')
 def render_home():
-    con = create_connection(DATABASE)
-    cur = con.cursor()
-    # Randomized top query
-    # Code learnt from https://www.youtube.com/watch?v=3AlUIKNE-_s
-    query = "SELECT image FROM closet WHERE category = 'top' ORDER BY RANDOM() LIMIT 1"
-    # Query the db for random top image
-    cur.execute(query)
-    top_selection = cur.fetchall()
-    # Randomized bottom query
-    query = "SELECT image FROM closet WHERE category = 'bottom' ORDER BY RANDOM() LIMIT 1"
-    # Query the db for random bottom image
-    cur.execute(query)
-    bottom_selection = cur.fetchall()
-    con.close()
-    return render_template("index.html", top=top_selection, bottom=bottom_selection)
+  """Render homepage."""
+  con = create_connection(DATABASE)
+  cur = con.cursor()
+  # Randomized top query
+  # Code learnt from https://www.youtube.com/watch?v=3AlUIKNE-_s
+  query = """SELECT image FROM closet WHERE category = 'top'
+          ORDER BY RANDOM() LIMIT 1
+          """
+  # Query the db for random top image
+  cur.execute(query)
+  top_selection = cur.fetchall()
+  # Randomized bottom query
+  query = """SELECT image FROM closet WHERE category = 'bottom'
+          ORDER BY RANDOM() LIMIT 1
+          """
+  # Query the db for random bottom image
+  cur.execute(query)
+  bottom_selection = cur.fetchall()
+  con.close()
+  return render_template("index.html", top=top_selection,
+                         bottom=bottom_selection)
 
 
 @app.route('/inventory')
 def render_inventory():
+  """Render inventory page."""
   # Get the sort request, default to 'clothing_id' if not provided
   sort = request.args.get('sort', 'clothing_colour')
   # Get the current sort order, default to 'asc' if not provided
@@ -58,16 +69,19 @@ def render_inventory():
   con = create_connection(DATABASE)
   cur = con.cursor()
   # Sort query
-  query = "SELECT clothing_type, clothing_colour, seasonal_type, image FROM closet ORDER BY " + sort + " " + order
+  query = """SELECT clothing_type, clothing_colour, seasonal_type, image
+          FROM closet ORDER BY """ + sort + " " + order
   # Query the db for the sorted fields
   cur.execute(query)
   clothing_list = cur.fetchall()
   con.close()
-  return render_template("inventory.html", clothes=clothing_list, order=new_order)
+  return render_template("inventory.html", clothes=clothing_list,
+                         order=new_order)
 
 
 @app.route('/outfits')
 def render_outfits():
+  """Render outfits page."""
   con = create_connection(DATABASE)
   cur = con.cursor()
   # Query to select all tops and their photos
@@ -82,12 +96,13 @@ def render_outfits():
   bottoms_list = cur.fetchall()
   con.close()
   return render_template("outfits.html", tops=tops_list, bottoms=bottoms_list)
-  
+
 
 @app.route('/search', methods=['GET', 'POST'])
 def render_search():
   """
-  Function to find all the records which contain the search item
+  Finds all the records which contain the search item.
+
   :parameters
   :POST contains the search value
   :returns a rendered page
@@ -95,13 +110,13 @@ def render_search():
   search = request.form['search']
 
   # Search query
-  query = """
-        SELECT clothing_type, clothing_colour, seasonal_type, image FROM closet 
-        WHERE clothing_id LIKE ?
-           OR clothing_type LIKE ?
-           OR clothing_colour LIKE ?
-           OR seasonal_type LIKE ?
-    """
+  query = """SELECT clothing_type, clothing_colour,
+          seasonal_type, image FROM closet
+          WHERE clothing_id LIKE ?
+          OR clothing_type LIKE ?
+          OR clothing_colour LIKE ?
+          OR seasonal_type LIKE ?
+          """
 
   con = create_connection(DATABASE)
   cur = con.cursor()

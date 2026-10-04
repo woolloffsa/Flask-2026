@@ -14,9 +14,9 @@
 body {
   /* Creates a polkadot pattern */
   /* Code learnt from https://dev.to/clairecodes/how-to-create-a-polka-dot-background-with-css-23m0 */
-  background-image: radial-gradient(#d1fffc 20%, transparent 20%),
-    radial-gradient(#58e8de 20%, transparent 20%);
-  background-color: #fafafa;
+  background-image: radial-gradient(#ffa9c5 20%, transparent 20%),
+    radial-gradient(#906144 20%, transparent 20%);
+  background-color: #fff8f0;
   background-position: 0 0, 50px 50px;
   background-size: 100px 100px;
 }
@@ -28,8 +28,8 @@ main {
 
 header {
   text-align: center;
-  background-color:#FFC3D8;
-  border-bottom: 1.75px solid #51382B;
+  background-color:#f8b0c8;
+  border-bottom: 1.75px solid #906144;
   padding: 5px;
   width: 100%;
 }
@@ -41,7 +41,7 @@ header a {
   font-style: normal;
   letter-spacing: 2px;
   text-decoration: none;
-  color:#51382B;
+  color:#614533;
 }
 
 nav {
@@ -57,21 +57,21 @@ nav {
 
 nav a {
   display: inline-block;
-  background-color: #FFC3D8;
-  border: 1.75px solid #51382B;
+  background-color: #f8b0c8;
+  border: 1.75px solid #895737;
   border-radius: 40px;
   min-width: 6.5rem;
   padding: 0.5rem;
   text-align: center;
   text-decoration: none;
-  color:#51382B;
+  color:#906144;
   font-family: "Crimson Text", serif;
   font-weight: 400;
   font-style: normal;
 }
 
 nav a:hover {
-  background-color: #FF91B8;
+  background-color: #ffa9c5;
 }
 
 .dropdown {
@@ -81,8 +81,9 @@ nav a:hover {
   min-width: 5.5rem;
   margin-right: 10px;
   text-align: center;
-  background-color: #FFC3D8;
-  border: 1.75px solid #51382B;
+  background-color: #f8b0c8;
+  border: 1.75px solid #895737;
+  color: #906144;
   border-radius: 30px;
   font-family: "Crimson Text", serif;
   font-weight: 400;
@@ -92,8 +93,8 @@ nav a:hover {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  border: 1px solid #51382B;
+  background-color: #fff8f0;
+  border: 1px solid #895737;
   border-radius: 15px;
   right: 0;
   margin-top: 5px;
@@ -101,7 +102,7 @@ nav a:hover {
 
 .dropdown-content a {
   border: none;
-  border-bottom: 1.5px solid #51382B;
+  border-bottom: 1.5px solid #895737;
   background-color: transparent;
   border-radius: 0;
   margin: 0 5px;
@@ -133,9 +134,9 @@ form {
 .search-input-wrapper {
   display: flex;
   align-items: center;
-  border: 1.75px solid #51382B;
+  border: 1.75px solid #895737;
   border-radius: 25px;
-  background-color: #ffffff;
+  background-color: #fff8f0;
   padding: 3px;
   width: 250px;
   height: 25px;
@@ -143,9 +144,9 @@ form {
 
 input[type="submit"] {
   flex: 1;
-  color: #51382B;
-  border: 1.75px solid #51382B;
-  background-color: #FFC3D8;
+  color: #906144;
+  border: 1.75px solid #895737;
+  background-color: #f8b0c8;
   border-radius: 25px;
   padding: 3px 4px;
   font-family: 'Crimson Text', serif;
@@ -155,7 +156,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #FF91B8;
+  background-color: #ffa9c5;
 }
 
 #search {
@@ -176,7 +177,7 @@ input[type="submit"]:hover {
 .item-card {
   display: grid;
   justify-content: center;
-  background-color: #FFC3D8;
+  background-color: #F7C3D5;
   padding: 10px;
   width: 220px;
   border: 2px solid #FF91B8;
@@ -194,13 +195,14 @@ p {
   font-family: "Crimson Text", serif;
   font-weight: 400;
   font-style: normal;
+  color: 895737;
 }
 
 .image {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f9f9f9;
+  background-color: #fff8f0;
   border: 2px solid #FF91B8;
   border-radius: 5px;
   border-bottom-left-radius: 15px;
@@ -211,8 +213,9 @@ p {
 
 footer {
   display: flex;
-  background-color:#FFC3D8;
-  border-top: 1.75px solid #51382B;
+  background-color:#f8b0c8;
+  border-top: 1.75px solid #895737;
+  color: #906144;
   font-size: 11px;
   padding: 5px;
 }
